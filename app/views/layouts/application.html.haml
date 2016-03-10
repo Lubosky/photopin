@@ -6,4 +6,6 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
 
   %body
-    = yield
+    = render 'header'
+    = render 'container'
+    = render 'footer'
