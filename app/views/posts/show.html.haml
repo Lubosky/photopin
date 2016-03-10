@@ -1,2 +1,4 @@
 =link_to image_tag(@post.image.thumb('650x450').url, class:'img-responsive'), post_path(@post) if @post.image_stored?
 =@post.caption
+
+= link_to 'Update', edit_post_path(@post)
