@@ -1,0 +1,49 @@
+.card
+  +border-radius(3px)
+  background-color: white
+  border: 1px solid $general-border-color
+  max-width: 650px
+  margin: auto auto 45px
+  overflow: hidden
+
+  a
+    &:hover,
+    &:focus,
+    &:active
+      text-decoration: none !important
+
+  .card-header
+    height: 60px
+    line-height: 30px
+    padding: 15px 20px
+
+    .author-avatar
+      +border-radius(50%)
+      +size(30px)
+      border: 1px solid $general-border-color
+      display: inline-block
+      margin-right: 5px
+      overflow: hidden
+
+    .meta
+      display: inline-block
+      position: relative
+      top: -10px
+      width: calc(100% - 40px)
+
+    .published
+      float: right
+
+  .card-image
+    border: 1px solid $general-border-color
+
+  .card-container
+    padding: 20px
+
+    .card-caption
+
+    .card-actions
+      border-top: 1px solid $general-border-color
+      margin-top: 20px
+      min-height: 45px
+      padding-top: 20px

@@ -1,0 +1,81 @@
+//
+// Font Import
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700)
+// __________________________________________________
+
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:              #000
+
+$brand-primary:         #125688
+$brand-success:         #5cb85c
+$brand-info:            #5bc0de
+$brand-warning:         #f0ad4e
+$brand-danger:          #d9534f
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for <body>
+$body-bg:               #f0f3f4
+//** Global text color on <body>
+$text-color:            #58666e
+//** Global muted text color on <body>
+$text-muted:            lighten($gray-base, 67%)
+//** Global textual link color.
+$link-color:            $brand-primary
+//** Link hover color set via darken() function
+$link-hover-color:      darken($link-color, 15%)
+//** Link hover decoration.
+$link-hover-decoration: underline
+//** Border color for <body>
+$general-border-color:  #edeeee
+//** General box-shadow <body>
+$default-box-shadow:    rgba(0, 0, 0, 0.05)
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-base:        'Droid Sans', sans-serif
+$font-family-serif:       Georgia, "Times New Roman", Times, serif
+
+$font-size-base:          14px
+$font-size-large:         ceil(($font-size-base * 1.25))  // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85))  // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6))  // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7))   // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25))  // ~18px
+$font-size-h5:            $font-size-base
+$font-size-h6:            ceil(($font-size-base * 0.85))  // ~12px
+
+//** By default, this inherits from the <body>
+$headings-font-weight:    700
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                    50px
+$navbar-default-bg:                #fff
+
+// Navbar links
+$navbar-default-link-color:                $brand-primary
+$navbar-default-link-hover-color:          darken($brand-primary, 10%)
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%)

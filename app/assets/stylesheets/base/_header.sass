@@ -1,0 +1,24 @@
+.navbar
+  border-bottom: none
+  margin-bottom: 1em
+  +box-shadow(0 2px 2px $default-box-shadow,0 1px 0 $default-box-shadow)
+
+  .navbar-header
+    min-width: 220px
+    white-space: nowrap
+    .navbar-brand
+
+      padding-left: 10px
+      padding-right: 10px
+
+  +xs
+    +clearfix
+    .nav > li
+      display: inline-block
+    .navbar-right
+      margin-right: 0
+      float: right
+      margin-top: 4px
+      margin-right: -13px
+    .navbar-header
+      float: left

@@ -1,0 +1,9 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      = link_to 'PhotoPin', root_path, class: 'navbar-brand'
+    %ul.nav.navbar-nav.navbar-right
+      %li
+        = link_to 'New Post', new_post_path(@post)
+      %li
+        = link_to 'Login', ''

@@ -1,2 +1,15 @@
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
+@import
+  'base/variables';
+
+@import
+  'bootstrap-sprockets',
+  'bootstrap';
+
+@import
+  'base/mixins',
+  'base/global',
+  'base/header',
+  'base/content';
+
+@import
+  'components/card';

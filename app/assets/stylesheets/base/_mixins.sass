@@ -1,0 +1,30 @@
+@import 'responsive'
+
+// BOX SHADOW
+@mixin prefixer($property, $value, $prefixes: webkit moz ms o)
+  @each $prefix in $prefixes
+    #{"-" + $prefix + "-" + $property}: $value
+
+  #{$property}: $value
+
+@mixin box-shadow($properties...)
+  @include prefixer(box-shadow, $properties)
+
+// OPACITY
+@mixin opacity($value, $important: '')
+  opacity: $value #{$important}
+  filter: alpha(opacity=#{$value * 100}) #{$important}
+
+// BORDER RADIUS
+@mixin border-radius($radius, $important: '')
+  -webkit-border-radius: $radius#{$important}
+  -moz-border-radius: $radius#{$important}
+  -ms-border-radius: $radius#{$important}
+  -o-border-radius: $radius#{$important}
+  border-radius: $radius#{$important}
+
+// SIZE
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+
