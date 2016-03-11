@@ -1,6 +1,6 @@
 .card
   .card-header
-    = link_to image_tag(@post.image.thumb('30x30px').url), post_path(@post), class: 'author-avatar'
+    = link_to image_tag(@post.image.thumb('30x30#').url), post_path(@post), class: 'author-avatar'
     .meta
       %span.author
         =link_to 'Lubosky', '#'
@@ -8,7 +8,7 @@
         = time_ago_in_words(@post.created_at)
         ago
   .card-image
-    =link_to image_tag(@post.image.thumb('650x450').url, class:'img-responsive'), post_path(@post) if @post.image_stored?
+    =link_to image_tag(@post.image.thumb('650x').url, class:'img-responsive'), post_path(@post) if @post.image_stored?
   .card-container
     .card-caption
       =@post.caption
