@@ -13,11 +13,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @post = Post.create(post_params)
+    @post = Post.create(post_params)
+    if @post.save
       flash[:success] = 'Your post has been successfully created!'
       redirect_to posts_path
     else
-      flash.now[:alert] = 'Ooops! We\'re having trouble creating your post. Please check your form.'
+      flash[:alert] = 'Ooops! We are having trouble creating your post. Please check your form.'
       render :new
     end
   end
@@ -30,7 +31,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Your post has been successfully updated!'
       redirect_to posts_path
     else
-      flash.now[:alert] = 'Sorry! We\'re having trouble updating your post.'
+      flash[:alert] = 'Sorry! We are having trouble updating your post.'
       render :edit
     end
   end

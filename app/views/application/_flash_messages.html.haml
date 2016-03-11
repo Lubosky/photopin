@@ -1,9 +1,10 @@
 - if flash.present?
-  -flash.each do |name, msg|
+  - flash.each do |name, msg|
     - if msg.respond_to?('each')
       - msg.each do |item|
         :coffeescript
-          $.notify { message: '#{item}' }, type: '#{alert_for(name)}'
+          $.notify { message: '#{item}' },
+          type: '#{alert_for(name)}'
           allow_dismiss: false
     - else
       :coffeescript
