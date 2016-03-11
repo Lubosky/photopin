@@ -18,10 +18,12 @@ gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.5.0.beta2'
+  gem 'factory_girl_rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'capybara'
 end
-
