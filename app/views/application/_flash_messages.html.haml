@@ -5,9 +5,9 @@
         :coffeescript
           $.notify { message: '#{item}' },
           type: '#{alert_for(name)}'
-          allow_dismiss: false
+          offset: {x: 20, y:60}
     - else
       :coffeescript
         $.notify { message: '#{msg}' },
           type: '#{alert_for(name)}'
-          allow_dismiss: false
+          offset: {x: 20, y:60}
