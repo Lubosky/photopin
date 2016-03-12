@@ -22,5 +22,17 @@ module PhotoPin
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.action_mailer.default_url_options = { :host => ENV.fetch('SMTP_1_DOMAIN', 'localhost:3000') }
+    config.action_mailer.smtp_settings = {
+      address: ENV.fetch('SMTP_1_ADDRESS', 'localhost'),
+      port: ENV.fetch('SMTP_1_PORT', 1025).to_i,
+      domain: ENV.fetch('SMTP_1_DOMAIN', 'localhost:3000'),
+      authentication: ENV.fetch('SMTP_1_AUTHENTICATION', nil),
+      enable_starttls_auto: ENV.fetch('SMTP_1_ENABLE_STARTTLS_AUTO', 'false') == 'true',
+      user_name: ENV.fetch('SMTP_1_USER_NAME', nil),
+      password: ENV.fetch('SMTP_1_PASSWORD', nil),
+      openssl_verify_mode: ENV.fetch('SMTP_1_OPENSSL_VERIFY_MODE', nil),
+    }
   end
 end
