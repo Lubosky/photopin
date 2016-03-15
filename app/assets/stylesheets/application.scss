@@ -1,15 +1,21 @@
 @import
-  'base/variables';
+  'utils/variables';
 
 @import
   'bootstrap-sprockets',
   'bootstrap';
 
 @import
-  'base/mixins',
-  'base/global',
-  'base/header',
-  'base/content';
+  'utils/responsive',
+  'utils/mixins',
+  'utils/utils';
+
+@import
+  'base/global';
+
+@import
+  'layout/header',
+  'layout/content';
 
 @import
   'components/avatar',
