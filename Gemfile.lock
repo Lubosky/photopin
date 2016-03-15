@@ -40,6 +40,8 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
       execjs
+    avatar_magick (1.0.1)
+      dragonfly (~> 1.0)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -216,6 +218,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  avatar_magick
   bootstrap-sass
   byebug
   capybara

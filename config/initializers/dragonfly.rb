@@ -3,6 +3,7 @@ require 'dragonfly'
 # Configure
 Dragonfly.app.configure do
   plugin :imagemagick
+  plugin :avatarmagick
 
   secret "317fcea378ca8811bf08276b0ce60c48b93c735eeddb1ecc0a473698ab2d2561"
 

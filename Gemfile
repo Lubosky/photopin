@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'dragonfly'
+gem 'avatar_magick'
 gem 'simple_form'
 gem 'devise', '~> 3.5', '>= 3.5.5'
 

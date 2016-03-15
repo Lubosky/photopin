@@ -9,7 +9,7 @@
         %li.dropdown
           %a.dropdown-toggle.clear{ href: 'javascript:void(0)', data: { animation: 'scale-up', toggle: 'dropdown', 'close-others': 'true' } }
             %span.avatar.pull-right
-              = image_tag(current_user.avatar.thumb('40x40#').url, class:'img-responsive')
+              = user_avatar(current_user, class: 'img-responsive size-40')
             %span.hidden-xs
               = current_user.username
             %b.caret
