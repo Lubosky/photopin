@@ -1,9 +1,34 @@
 %nav.navbar.navbar-default.navbar-fixed-top
   .container
     .navbar-header
-      = link_to 'PhotoPin', root_path, class: 'navbar-brand'
+      = link_to Settings.application.name, root_path, class: 'navbar-brand'
     %ul.nav.navbar-nav.navbar-right
-      %li
-        = link_to 'New Post', new_post_path(@post)
-      %li
-        = link_to 'Login', ''
+      - if user_signed_in?
+        %li
+          = link_to 'New Post', new_post_path(@post)
+        %li.dropdown
+          %a.dropdown-toggle.clear{ href: 'javascript:void(0)', data: { animation: 'scale-up', toggle: 'dropdown', 'close-others': 'true' } }
+            %span.avatar.pull-right
+              = image_tag(current_user.avatar.thumb('40x40#').url, class:'img-responsive')
+            %span.hidden-xs
+              = current_user.username
+            %b.caret
+          .dropdown-menu
+            %ul.dropdown-wrapper
+              .dropdown-section-header
+                %hr
+                .dropdown-section-label
+                  = current_user.username
+              %li
+                = link_to 'View Profile & Account', edit_user_registration_path
+              .dropdown-section-header
+                %hr
+                .dropdown-section-label
+                  = Settings.application.name
+              %li
+                = link_to 'Sign Out', destroy_user_session_path, method: :delete
+      -else
+        %li
+          = link_to 'Log In', new_user_session_path
+        %li
+          = link_to 'Sign Up', new_user_registration_path
