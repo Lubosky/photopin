@@ -1,6 +1,6 @@
 .card
   .card-header
-    = link_to image_tag(@post.image.thumb('30x30#').url), post_path(@post), class: 'author-avatar'
+    = link_to image_tag(@post.image.thumb('30x30#').url), post_path(@post), class: 'avatar card-avatar'
     .meta
       %span.author
         =link_to 'Lubosky', '#'
