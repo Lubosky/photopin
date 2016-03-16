@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   dragonfly_accessor :avatar
   include Avatarable
 
+  has_many :posts, dependent: :destroy
+
   validates :username, presence: true, length: { minimum: 4, maximum: 18 }
   validates_property :format, of: :avatar, in: [:jpeg, :jpg, :png, :gif], case_sensitive: false
 

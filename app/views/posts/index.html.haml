@@ -1,10 +1,10 @@
 -@posts.each do |post|
   .card
     .card-header
-      = link_to image_tag(post.image.thumb('30x30#').url, class:'img-responsive'), post_path(post), class: 'avatar card-avatar'
+      = link_to user_avatar(post.user, class: 'img-responsive'), '#', class: 'avatar card-avatar'
       .meta
         %span.author
-          =link_to 'Lubosky', '#'
+          =link_to post.user.username, '#'
         %span.published.text-muted
           = time_ago_in_words(post.created_at)
           ago
