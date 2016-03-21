@@ -26,9 +26,14 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-email', '~> 2.5'
   gem 'email_spec'
+  gem 'database_cleaner'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :development do
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
 end

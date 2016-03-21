@@ -2,33 +2,45 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
 
-  describe "GET #index" do
-    it "assigns @posts" do
-      post = create(:post)
-      get :index
-      assigns(:posts).should eq([post])
+  describe 'GET #index' do
+    context 'when user is logged in' do
+      before do
+        sign_in_user
+        get :index
+      end
+      it { is_expected.to respond_with :ok }
+      it { is_expected.to render_with_layout :application }
+      it { is_expected.to render_template :index }
     end
 
-    it "renders the :index view" do
-      get :index
-      response.should render_template :index
+    context 'when user is logged out' do
+      before do
+        get :index
+      end
+      it { is_expected.to redirect_to new_user_session_path }
     end
   end
 
   describe "GET #show" do
-    it "assigns the requested post to @post" do
-      post = create(:post)
-      get :show, id: post
-      assigns(:post).should eq(post)
+
+    before :each do
+      user = FactoryGirl.create(:user)
+      user.confirm
+      sign_in user
+      @post = create(:post, user: user)
+      get :show, id: @post
     end
 
-    it "renders the #show view" do
-      get :show, id: create(:post)
-      response.should render_template :show
-    end
+    it { expect(assigns(:post)).to eq(@post) }
+    it { is_expected.to render_template :show }
   end
 
   describe "CREATE new post" do
+
+    before :each do
+      sign_in_user
+    end
+
     context 'when new post is invalid' do
       it 'renders the page with error' do
         post :create, post: { image: '', content: 'Always pass on what you have learned.' }
@@ -56,8 +68,12 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "UPDATE post" do
+
     before :each do
-      @post = create(:post)
+      user = FactoryGirl.create(:user)
+      user.confirm
+      sign_in user
+      @post = create(:post, user: user)
     end
 
     context 'when updated post is invalid' do
@@ -76,7 +92,7 @@ RSpec.describe PostsController, type: :controller do
         put :update, id: @post,
           post: attributes_for(:post, caption: 'Awesome Post')
         @post.reload
-        @post.caption.should eq('Awesome Post')
+        expect(@post.caption).to eq('Awesome Post')
       end
 
       it 'redirects to posts#index' do
@@ -91,7 +107,10 @@ RSpec.describe PostsController, type: :controller do
 
   describe "DELETE post" do
     before :each do
-      @post = create(:post)
+      user = FactoryGirl.create(:user)
+      user.confirm
+      sign_in user
+      @post = create(:post, user: user)
     end
 
     it 'deletes the contact' do
