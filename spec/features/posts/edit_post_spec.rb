@@ -2,16 +2,19 @@ require 'rails_helper.rb'
 
 feature 'Edit individual post' do
 
-  let(:user) { FactoryGirl.create(:user) }
+  let(:u1) { FactoryGirl.create(:user) }
+  let(:u2) { FactoryGirl.create(:user) }
 
   before do
-    user.confirm
-    login_as user
+    u1.confirm
+
+    post = create(:post, id: 1, caption: 'Post #1', user: u1)
+    post = create(:post, id: 2, caption: 'Post #2', user: u2)
+
+    login_as u1
   end
 
   scenario 'can edit/update individual post' do
-    post = create(:post, caption: 'Post #1', user: user)
-
     visit root_path
     find(:xpath, '//a[contains(@href,"/posts/1")]').click
     click_link 'Update'
@@ -22,5 +25,12 @@ feature 'Edit individual post' do
     expect(page.current_path).to eq '/posts'
     expect(page).to have_css 'img[src*="ewok.jpeg"]'
     expect(page).to have_content 'Updated post #1'
+  end
+
+  scenario 'cannot edit/update post which does not belong to him' do
+    visit root_path
+    find(:xpath, '//a[contains(@href,"/posts/2")]').click
+    expect(page.current_path).to eq '/posts/2'
+    expect(page).not_to have_content('Update')
   end
 end

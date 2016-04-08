@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 
 feature 'User Login' do
 
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user, username: 'test_user') }
 
   before :each do
     user.confirm
