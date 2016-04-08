@@ -29,6 +29,11 @@ require 'shoulda/matchers'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+
+Capybara::Webkit.configure do |config|
+  config.block_unknown_urls
+end
+
 RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
