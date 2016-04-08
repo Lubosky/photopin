@@ -1,0 +1,15 @@
+.card
+  .card-header
+    = link_to user_avatar(post.user, class: 'img-responsive'), '#', class: 'avatar card-avatar'
+    .meta
+      %span.author
+        =link_to post.user.username, '#'
+      %span.published.text-muted
+        = time_ago_in_words(post.created_at)
+        ago
+  .card-image
+    =link_to image_tag(post.image.thumb('650x').url, class:'img-responsive'), post_path(post) if post.image_stored?
+  .card-container
+    .card-caption
+      =post.caption
+    .card-actions
