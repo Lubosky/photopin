@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   # Avatar routes
   get 'avatar/:size/:background/:text' => Dragonfly.app.endpoint { |params, app|

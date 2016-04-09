@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   dragonfly_accessor :image
 
   belongs_to :user
+  has_many :comments
 
   validates :user_id, presence: true
   validates_presence_of :image

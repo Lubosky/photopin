@@ -1,0 +1,7 @@
+%li.comment
+  %span.username
+    = comment.user.username
+  %span.content
+    = comment.content
+  - if comment.user == current_user
+    = link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: 'Are you sure?', id: comment.id }, remote: true

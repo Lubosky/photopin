@@ -13,3 +13,7 @@
     .card-caption
       =post.caption
     .card-actions
+      %ul.comments{ data: { post: post.id } }
+        - if post.comments.any?
+          = render post.comments, post: post
+      = render 'comments/form', post: post

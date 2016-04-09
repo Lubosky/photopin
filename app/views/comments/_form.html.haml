@@ -1,0 +1,3 @@
+.comment-form
+  = simple_form_for([post, post.comments.build], remote: true) do |f|
+    = f.text_field :content, placeholder: 'Add a comment...', class: 'comment-content', data: { post: post.id, count: post.comments.count }
