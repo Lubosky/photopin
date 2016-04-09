@@ -17,7 +17,7 @@ feature 'Edit individual post' do
   scenario 'can edit/update individual post' do
     visit root_path
     find(:xpath, '//a[contains(@href,"/posts/1")]').click
-    click_link 'Update'
+    click_link 'Edit'
     expect(page.current_path).to eq '/posts/1/edit'
     attach_file('post[image]', 'spec/support/images/ewok.jpeg')
     fill_in 'Caption', with: 'Updated post #1'
