@@ -19,6 +19,7 @@ gem 'avatar_magick'
 gem 'simple_form'
 gem 'devise', '~> 3.5', '>= 3.5.5'
 gem 'acts_as_votable'
+gem 'purpur', github: 'cimon-io/purpur'
 
 group :development, :test do
   gem 'byebug'
