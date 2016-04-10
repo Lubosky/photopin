@@ -1,2 +1,5 @@
-$('[data-like-post=<%= @post.id %>]').removeClass('icon-heart-empty').addClass('icon-heart');
-$('[data-post-likes=<%= @post.id %>]').html("<%= j ( render partial: 'likes', locals: { post: @post } ) %>");
+$('[data-like-post-id=<%= @post.id %>]').html("<%= j ( icon_tag 'heart' ) %>");
+$('[data-likes-post-id=<%= @post.id %>]').html("<%= j ( render partial: 'likes', locals: { post: @post } ) %>");
+<% if @post.get_likes.size == 1 %>
+  $('div.card-likes').addClass('has-likes');
+<% end %>

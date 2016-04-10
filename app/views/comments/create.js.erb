@@ -1,2 +1,2 @@
-$('[data-post=<%= @post.id %>]').append("<%=j render 'comments/comment', post: @post, comment: @comment %>");
-$('[data-post=<%= @post.id %>]').val('')
+$('[data-comments-post-id=<%= @post.id %>]').append("<%=j render 'comments/comment', post: @post, comment: @comment %>");
+$('[data-comment-form-post-id=<%= @post.id %>]').val('')

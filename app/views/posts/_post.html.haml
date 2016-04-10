@@ -10,12 +10,15 @@
   .card-image
     =link_to image_tag(post.image.thumb('650x').url, class:'img-responsive'), post_path(post) if post.image_stored?
   .card-container
-    = render 'likes', post: post
+    .card-likes{ data: { 'likes-post-id': post.id } }
+      = render 'likes', post: post
     .card-caption
       =post.caption
+    %ul.comments{ data: { 'comments-post-id': post.id } }
+      - if post.comments.any?
+        = render post.comments, post: post
     .card-actions
-      %ul.comments{ data: { post: post.id } }
-        - if post.comments.any?
-          = render post.comments, post: post
       = render 'like_form', post: post
       = render 'comments/form', post: post
+      - if post.user == current_user
+        = render 'post_actions', post: post

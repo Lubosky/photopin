@@ -1,0 +1,9 @@
+.action.dropdown.pull-right
+  %a.dropdown-toggle.clear{ href: 'javascript:void(0)', data: { animation: 'scale-up', toggle: 'dropdown', 'close-others': 'true' } }
+    = icon_tag 'nav-horizontal'
+  .dropdown-menu
+    %ul.dropdown-wrapper
+      %li
+        = link_to 'Edit', edit_post_path(post)
+      %li
+        = link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }
