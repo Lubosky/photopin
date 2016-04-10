@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   dragonfly_accessor :avatar
   include Avatarable
+  acts_as_voter
 
   has_many :posts, dependent: :destroy
 
