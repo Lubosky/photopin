@@ -1,0 +1,2 @@
+$('[data-like-post=<%= @post.id %>]').removeClass('icon-heart-empty').addClass('icon-heart');
+$('[data-post-likes=<%= @post.id %>]').html("<%= j ( render partial: 'likes', locals: { post: @post } ) %>");
