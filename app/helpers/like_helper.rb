@@ -12,7 +12,7 @@ module LikeHelper
 
   def is_liked?(post)
     return icon_tag 'heart' if current_user.voted_for? post
-    icon_tag 'heart-empty'
+    return icon_tag 'heart-empty'
   end
 
   private

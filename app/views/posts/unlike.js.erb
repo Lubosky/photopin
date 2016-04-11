@@ -1,0 +1,5 @@
+$('[data-like-post-id=<%= @post.id %>]').html('<%= j ( link_to like_post_path(@post), remote: true do is_liked? @post end ) %>');
+$('[data-likes-post-id=<%= @post.id %>]').html("<%= j ( render partial: 'likes', locals: { post: @post } ) %>");
+<% if @post.get_likes.size == 0 %>
+  $('[data-likes-post-id=<%= @post.id %>]').removeClass('has-likes');
+<% end %>

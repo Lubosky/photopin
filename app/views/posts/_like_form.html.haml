@@ -1,3 +1,7 @@
-.action.pull-left
-  = link_to like_post_path(post), remote: true, data: { 'like-post-id': post.id } do
-    = is_liked? post
+.action.pull-left{ data: { 'like-post-id': post.id } }
+  - if current_user.liked? post
+    = link_to unlike_post_path(post), remote: true do
+      = is_liked? post
+  - else
+    = link_to like_post_path(post), remote: true do
+      = is_liked? post
