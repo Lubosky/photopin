@@ -16,7 +16,7 @@ feature 'Edit individual post' do
 
   scenario 'can edit/update individual post' do
     visit root_path
-    find(:xpath, '//a[contains(@href,"/posts/1")]').click
+    first(:xpath, '//a[contains(@href,"/posts/1")]').click
     click_link 'Edit'
     expect(page.current_path).to eq '/posts/1/edit'
     attach_file('post[image]', 'spec/support/images/ewok.jpeg')
@@ -29,7 +29,7 @@ feature 'Edit individual post' do
 
   scenario 'cannot edit/update post which does not belong to him' do
     visit root_path
-    find(:xpath, '//a[contains(@href,"/posts/2")]').click
+    first(:xpath, '//a[contains(@href,"/posts/2")]').click
     expect(page.current_path).to eq '/posts/2'
     expect(page).not_to have_content('Update')
   end

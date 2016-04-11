@@ -13,7 +13,6 @@ feature 'Delete individual post' do
     post = create(:post, caption: 'Post #1', user: user)
 
     visit root_path
-    find(:xpath, '//a[contains(@href,"/posts/1")]').click
     click_link 'Delete'
     expect(page).to have_css('script', text: 'Post has been successfully deleted!', visible: false)
 
