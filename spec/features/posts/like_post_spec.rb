@@ -9,7 +9,7 @@ feature 'Like individual post' do
     login_as user
   end
 
-  scenario 'can see individual post' do
+  scenario 'can like individual post' do
     post = create(:post, caption: 'Post #1', user: user)
 
     visit root_path
