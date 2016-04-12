@@ -1,2 +1,23 @@
+.profile
+  .row.profile-header
+    .col-md-3.profile-avatar
+      = user_avatar(@user, class: 'img-circle')
+    .col-md-9
+      .profile-head
+        %h3.profile-username
+          = @user.username
+        - if @user == current_user
+          = link_to 'Edit Profile', edit_profile_path(@user.username), class: 'btn btn-default'
+      .profile-name
+        %strong
+          John Doe
+      .profile-bio
+        Bermudian living in Mexico.
+      %ul.profile-stats
+        %li
+          %strong
+            = @user.posts.size
+          = 'post'.pluralize(@user.posts.size)
+
 - @posts.each do |post|
   = render 'posts/post', post: post

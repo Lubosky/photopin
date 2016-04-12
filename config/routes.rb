@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get ':username', to: 'profiles#show', as: :profile
+  get   ':username', to: 'profiles#show', as: :profile
+  get   ':username/edit', to: 'profiles#edit', as: :edit_profile
+  patch ':username/edit', to: 'profiles#update', as: :update_profile
 
   # Avatar routes
   get 'avatar/:size/:background/:text' => Dragonfly.app.endpoint { |params, app|
