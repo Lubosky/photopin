@@ -12,11 +12,7 @@ module Avatarable
   end
 
   def avatar_url
-    url_helpers.send(:avatar_path, avatar_size, avatar_color, avatar_text)
-  end
-
-  def avatar_size
-    150
+    url_helpers.send(:avatar_path, avatar_color, avatar_text)
   end
 
   def avatar_param
