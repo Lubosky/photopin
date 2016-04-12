@@ -1,9 +1,9 @@
 .card
   .card-header
-    = link_to user_avatar(post.user, class: 'img-responsive'), '#', class: 'avatar card-avatar'
+    = link_to user_avatar(post.user, class: 'img-responsive'), profile_path(post.user.username), class: 'avatar card-avatar'
     .meta
       %span.author
-        =link_to post.user.username, '#'
+        =link_to post.user.username, profile_path(post.user.username)
       %span.published.text-muted
         = time_ago_in_words(post.created_at)
         ago
@@ -11,14 +11,14 @@
     =link_to image_tag(post.image.thumb('650x').url, class:'img-responsive'), post_path(post) if post.image_stored?
   .card-container
     .card-likes{ data: { 'likes-post-id': post.id } }
-      = render 'likes', post: post
+      = render 'posts/likes', post: post
     .card-caption
       =post.caption
     %ul.comments{ data: { 'comments-post-id': post.id } }
       - if post.comments.any?
         = render post.comments, post: post
     .card-actions
-      = render 'like_form', post: post
+      = render 'posts/like_form', post: post
       = render 'comments/form', post: post
       - if post.user == current_user
-        = render 'post_actions', post: post
+        = render 'posts/post_actions', post: post

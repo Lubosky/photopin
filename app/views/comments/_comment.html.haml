@@ -1,5 +1,5 @@
 %li.comment
-  = link_to comment.user.username, 'javascript:void(0)', class: 'username'
+  = link_to comment.user.username, profile_path(comment.user.username), class: 'username'
   %span.content
     = comment.content
   - if comment.user == current_user

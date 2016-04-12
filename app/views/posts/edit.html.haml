@@ -3,7 +3,7 @@
     = link_to user_avatar(@post.user, class: 'img-responsive'), '#', class: 'avatar card-avatar'
     .meta
       %span.author
-        =link_to @post.user.username, '#'
+        =link_to @post.user.username, profile_path(@post.user.username)
       %span.published.text-muted
         = time_ago_in_words(@post.created_at)
         ago

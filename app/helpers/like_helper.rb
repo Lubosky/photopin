@@ -4,7 +4,7 @@ module LikeHelper
     users = []
     unless votes.blank?
       votes.voters.each do |voter|
-        users.push(link_to voter.username, 'javascript:void(0)', class: 'username')
+        users.push(link_to voter.username, profile_path(voter.username), class: 'username')
       end
       users.to_sentence.html_safe + like_plural(votes)
     end
