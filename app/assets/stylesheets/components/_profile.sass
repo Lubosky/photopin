@@ -1,0 +1,36 @@
+.profile
+  max-width: 720px
+  margin: 45px auto
+  padding-bottom: 20px
+  .profile-head
+    margin-bottom: 15px
+    .profile-username
+      display: inline-block
+    .btn
+      background: transparent
+      border-color: lighten($gray-base, 50%)
+      color: lighten($gray-base, 50%)
+      line-height: 30px
+      padding: 0 10px
+      margin: 0 0 5px 20px
+      text-transform: uppercase
+      &:focus,
+      &:hover,
+      &:active
+        border-color: lighten($gray-base, 30%)
+        color: lighten($gray-base, 30%)
+  .profile-name,
+  .profile-bio
+    display: inline
+    font-size: ($font-size-large - 1)
+    margin-top: 20px
+  .profile-name
+    font-weight: $bold
+  ul.profile-stats
+    font-size: ($font-size-large - 1)
+    display: flex
+    list-style: none
+    margin-top: 15px
+    padding: 0
+    > li
+      margin-right: 40px
