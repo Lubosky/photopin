@@ -37,6 +37,7 @@ group :development do
   gem 'spring'
 end
 
-group :development do
+group :test do
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+  gem 'simplecov'
 end
