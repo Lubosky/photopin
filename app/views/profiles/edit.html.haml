@@ -1,3 +1,5 @@
 = simple_form_for @user, url: { action: 'update' }, html: {multipart: true} do |f|
   = f.file_field :avatar
+  = f.input :name
+  = f.input :bio
   = f.button :submit

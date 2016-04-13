@@ -9,7 +9,7 @@ class UserParams < Devise::ParameterSanitizer
   end
 
   def account_update
-    default_params.permit(:username, :email, :avatar, :password, :password_confirmation, :current_password)
+    default_params.permit(:username, :email, :password, :password_confirmation, :current_password)
   end
 
 end

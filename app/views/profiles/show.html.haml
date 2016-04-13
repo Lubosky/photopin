@@ -10,9 +10,9 @@
           = link_to 'Edit Profile', edit_profile_path(@user.username), class: 'btn btn-default'
       .profile-name
         %strong
-          John Doe
+          = @user.name
       .profile-bio
-        Bermudian living in Mexico.
+        = @user.bio
       %ul.profile-stats
         %li
           %strong
