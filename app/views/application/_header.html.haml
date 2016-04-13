@@ -20,7 +20,9 @@
                 .dropdown-section-label
                   = current_user.username
               %li
-                = link_to 'View Profile & Account', edit_user_registration_path
+                = link_to 'View Profile & Account', profile_path(current_user.username)
+              %li
+                = link_to 'Account Settings', edit_user_registration_path
               .dropdown-section-header
                 %hr
                 .dropdown-section-label
