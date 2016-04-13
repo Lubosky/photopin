@@ -33,4 +33,11 @@ feature 'Edit individual post' do
     expect(page.current_path).to eq '/posts/2'
     expect(page).not_to have_content('Update')
   end
+
+  scenario 'cannot edit/update post which does not belong to him via URL' do
+    visit root_path
+    visit('/posts/2/edit')
+    expect(page.current_path).to eq root_path
+    expect(page).to have_css('script', text: "You cannot edit a post that doesn't belong to you!", visible: false)
+  end
 end

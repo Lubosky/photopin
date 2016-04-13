@@ -21,4 +21,15 @@ feature 'Create new post' do
     expect(page).to have_content('Always pass on what you have learned.')
     expect(page).to have_css('img[src*="yoda"]')
   end
+
+  scenario 'can create a post' do
+    visit root_path
+    click_link 'New Post'
+    fill_in 'Caption', with: 'This is the second post here.'
+    click_button 'Create Post'
+
+    expect(page.current_path).to eq '/posts'
+    expect(page).not_to have_content('This is the second post here.')
+    expect(page).to have_css('script', text: "Ooops! We are having trouble creating your post. Please check your form.", visible: false)
+  end
 end
