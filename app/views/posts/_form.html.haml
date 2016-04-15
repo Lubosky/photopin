@@ -1,4 +1,8 @@
-= simple_form_for @post, html: {multipart: true} do |f|
-  = f.file_field :image
-  = f.input :caption
+= simple_form_for @post, html: { multipart: true, class: 'form form-vertical' } do |f|
+  = f.file_field :image, id: 'previewable', class: 'file-upload hidden'
+  %label{ for: 'previewable' }
+    = icon_tag 'upload'
+    %strong
+      Choose a file...
+  = f.input :caption, label: false
   = f.button :submit

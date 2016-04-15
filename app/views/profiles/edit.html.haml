@@ -1,5 +1,15 @@
-= simple_form_for @user, url: { action: 'update' }, html: {multipart: true} do |f|
-  = f.file_field :avatar
-  = f.input :name
-  = f.input :bio
-  = f.button :submit
+.profile.edit
+  %h3
+    Edit Profile
+  %hr
+  .profile-avatar
+    = user_avatar(@user, id: 'preview_img', class: 'img-circle')
+  = simple_form_for @user, url: { action: 'update' }, html: {multipart: true, class: 'form form-horizontal' }, wrapper: 'horizontal_form' do |f|
+    = f.file_field :avatar, id: 'previewable', class: 'file-upload hidden'
+    %label{ for: 'previewable' }
+      = icon_tag 'upload'
+      %strong
+        Choose a file...
+    = f.input :name
+    = f.input :bio
+    = f.button :submit, class: 'btn btn-primary pull-right'
