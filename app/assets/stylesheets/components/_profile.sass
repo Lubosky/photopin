@@ -1,33 +1,31 @@
 .profile
-  max-width: 720px
-  margin: 45px auto
-  padding-bottom: 20px
+  +border-radius(5px)
+  +box-shadow(0 2px 2px $default-box-shadow)
+  background-color: white
+  max-width: 650px
+  margin: 15px auto 25px
+  padding: 20px
   .profile-head
     margin-bottom: 15px
+    +xs-sm
+      padding-top: 25px
+      text-align: center
     .profile-username
       display: inline-block
     .btn
-      background: transparent
-      border-color: lighten($gray-base, 50%)
-      color: lighten($gray-base, 50%)
       line-height: 30px
       padding: 0 10px
       margin: 0 0 5px 20px
-      text-transform: uppercase
-      &:focus,
-      &:hover,
-      &:active
-        border-color: lighten($gray-base, 30%)
-        color: lighten($gray-base, 30%)
+      min-width: 120px
   .profile-name,
   .profile-bio
     display: inline
-    font-size: ($font-size-large - 1)
+    font-size: ($font-size-base + 1)
     margin-top: 20px
   .profile-name
     font-weight: $bold
   ul.profile-stats
-    font-size: ($font-size-large - 1)
+    font-size: $font-size-large
     display: flex
     list-style: none
     margin-top: 15px
@@ -36,11 +34,6 @@
       margin-right: 40px
 
   &.edit
-    +border-radius(3px)
-    background-color: white
-    border: 1px solid $general-border-color
-    padding: 20px
-    margin: 15px auto
     .profile-avatar
       margin: 0 auto 15px
       width: 120px

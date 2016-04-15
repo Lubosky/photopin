@@ -1,18 +1,19 @@
 .profile
   .row.profile-header
-    .col-md-3.profile-avatar
+    .col-md-3.profile-avatar.text-center
       = user_avatar(@user, class: 'img-circle')
     .col-md-9
       .profile-head
         %h3.profile-username
           = @user.username
         - if @user == current_user
-          = link_to 'Edit Profile', edit_profile_path(@user.username), class: 'btn btn-default'
+          = link_to 'Edit Profile', edit_profile_path(@user.username), class: 'btn blue outlined'
       .profile-name
         %strong
           = @user.name
       .profile-bio
         = @user.bio
+      %hr
       %ul.profile-stats
         %li
           %strong

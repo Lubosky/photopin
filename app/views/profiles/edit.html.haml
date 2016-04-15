@@ -7,9 +7,10 @@
   = simple_form_for @user, url: { action: 'update' }, html: {multipart: true, class: 'form form-horizontal' }, wrapper: 'horizontal_form' do |f|
     = f.file_field :avatar, id: 'previewable', class: 'file-upload hidden'
     %label{ for: 'previewable' }
-      = icon_tag 'upload'
+      = icon_tag 'add'
       %strong
-        Choose a file...
+        Select a file...
     = f.input :name
-    = f.input :bio
-    = f.button :submit, class: 'btn btn-primary pull-right'
+    = f.input :bio, input_html: { rows: 4 }
+    .form-actions.text-center
+      = f.button :submit, class: 'btn rounded purple'
