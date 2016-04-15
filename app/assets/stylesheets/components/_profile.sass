@@ -34,3 +34,22 @@
     padding: 0
     > li
       margin-right: 40px
+
+  &.edit
+    +border-radius(3px)
+    background-color: white
+    border: 1px solid $general-border-color
+    padding: 20px
+    margin: 15px auto
+    .profile-avatar
+      margin: 0 auto 15px
+      width: 120px
+      img
+        width: 120px
+        height: 120px
+        max-width: 100%
+        max-height: 100%
+        object-fit: cover
+    input
+      &[type='file']
+        margin: 0 auto 25px
