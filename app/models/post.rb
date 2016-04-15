@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   acts_as_votable
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :user_id, presence: true
   validates_presence_of :image
