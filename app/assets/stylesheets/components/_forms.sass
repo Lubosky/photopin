@@ -1,0 +1,74 @@
+.form
+  &.form-horizontal
+    .control-label
+      padding-left: 25px
+      text-align: left
+
+  .form-control
+    +border-radius(6px)
+    +box-shadow(none)
+    background-color: white
+    border: 2px solid $general-border-color
+
+    &.disabled
+      background-color: lighten($general-border-color, 4%)
+      color: $text-muted
+
+    &:focus, &:active
+      +box-shadow(none)
+      border-color: darken($general-border-color, 13%)
+
+  .help-block
+    font-size: $font-size-small + 1
+    margin: 2px auto 5px 2px
+
+  abbr[title],
+  abbr[data-original-title]
+    border-bottom: none
+    position: absolute
+    color: $red
+    left: 15px
+
+  input
+    &[type='file']
+      background-color: white
+      border: 2px solid $general-border-color
+      margin-bottom: 15px
+
+  .form-actions
+    border-top: 1px solid $general-border-color
+    clear: both
+    padding: 25px 0 10px 0
+    margin-top: 25px
+
+  .btn
+    font-weight: $bold
+    padding: 10px 20px !important
+
+.file-upload + label
+  +border-radius(6px)
+  background-color: $general-border-color
+  color: $text-color
+  cursor: pointer
+  display: block
+  font-size: $font-size-small
+  height: $input-height-base
+  margin: 0 auto 20px
+  overflow: hidden
+  padding: 8px 10px
+  text-overflow: ellipsis
+  white-space: nowrap
+  width: 200px
+
+  .icon
+    width: 15px
+    height: 13px
+    margin-right: 5px
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.has-focus
+    background-color: darken($general-border-color, 13%)
+    color: white
+

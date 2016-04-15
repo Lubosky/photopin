@@ -1,3 +1,5 @@
+@import 'base/colors'
+
 //
 // Font Import
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700)
@@ -13,33 +15,32 @@
 //## Gray and brand colors for use across Bootstrap.
 
 $gray-base:             #000
+$blue:                  #3499e0
+$red:                   #e32072
 
-$brand-primary:         #125688
-$brand-success:         #5cb85c
-$brand-info:            #5bc0de
-$brand-warning:         #f0ad4e
-$brand-danger:          #d9534f
+$brand-primary:         #439fe0
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for <body>
-$body-bg:               #f0f3f4
+$body-bg:               #f6f8f8
 //** Global text color on <body>
 $text-color:            #58666e
 //** Global muted text color on <body>
 $text-muted:            lighten($gray-base, 67%)
 //** Global textual link color.
-$link-color:            $brand-primary
+$link-color:            #125688
 //** Link hover color set via darken() function
 $link-hover-color:      darken($link-color, 15%)
 //** Link hover decoration.
 $link-hover-decoration: underline
 //** Border color for <body>
-$general-border-color:  #edeeee
+$general-border-color:  #edf1f2
 //** General box-shadow <body>
-$default-box-shadow:    rgba(0, 0, 0, 0.05)
+$default-box-shadow:    rgba(0, 0, 0, 0.1)
+$navbar-box-shadow:     rgba(0, 0, 0, 0.05)
 
 //== Typography
 //
@@ -72,8 +73,10 @@ $navbar-height:                    50px
 $navbar-default-bg:                #fff
 
 // Navbar links
-$navbar-default-link-color:                $brand-primary
-$navbar-default-link-hover-color:          darken($brand-primary, 10%)
+$navbar-default-link-color:                $text-color
+$navbar-default-link-hover-color:          darken($text-color, 10%)
+$navbar-default-link-hover-bg:             $body-bg
+$navbar-default-link-active-bg:            $body-bg
 
 // Navbar brand label
 $navbar-default-brand-color:               $navbar-default-link-color

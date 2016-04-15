@@ -1,0 +1,27 @@
+@each $name, $colors in $component-colors
+  .btn.#{$name}:not(.outlined)
+    @include button-variant(map-get($colors, font), map-get($colors, base), map-get($colors, base))
+
+  .btn
+    &.outlined.#{$name}
+      border-color: map-get($colors, base)
+      border-width: 2px
+      color: map-get($colors, base)
+      background: none
+
+      &:hover,
+      &:active,
+      &:active:hover,
+      &:active:focus,
+      &:focus,
+      &.active
+        border-color: map-get($colors, base)
+        color: map-get($colors, font)
+        background-color: map-get($colors, base)
+
+.btn
+  +transition(background 250ms)
+  min-width: 200px
+  text-transform: uppercase
+  &.rounded
+    border-radius: 2em
